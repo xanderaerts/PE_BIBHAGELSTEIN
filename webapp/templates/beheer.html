@@ -1,0 +1,50 @@
+{%extends "base.html"%}
+{%block title%}Beheer{%endblock%}
+
+{%block header%} 
+    <header>
+        <h1>Beheer</h1>
+    </header>
+{%endblock%}
+
+{%block content%}
+<body>
+
+    {%if succes%}
+    <p class='succes'>{{succes}}</p>
+    {% endif %}
+    
+    {%if error%}
+    <p class='error'>{{error}}</p>
+    {% endif %}
+
+    <form class="boek_toevoegen" method="POST" action="/beheer" onsubmit="controleer()">
+        <label for="Titel"><b>Titel van het boek</b></label>
+        <p><input type="text" id="Titel" name="Titel_boek"></p>
+        <label for="Auteur"><b>Auteur</b></label>
+        <p><input type="text" id="Auteur" name="Naam_auteur"></p>
+        <label for="Afkorting_auteur"><b>Afkorting Auteur</b></label>
+        <p><input type="text" id="Afkorting_auteur" name="Afkorting_auteur"></p>
+        <label for="ISBN"><b>ISBN nummer</b></label>
+        <p><input type="text" id="ISBN" name="ISBN_nummer"></p>
+        <label for="Nummerbib"><b>Nummer in bib</b></label>
+        <p><input type="text" id="Nummerbib" name="Nummer_bib"></p>
+        
+        <div class="boek_toevoegen_categorie">
+        <p><b>Categorie:</b></p>
+        <p><input type="radio" id="groen" name="categorie" value="groen">
+        <label for="groen">Groen</label></p>
+        <p><input type="radio" id="rood" name="categorie" value="rood">
+        <label for="rood">Rood</label></p>
+        <p><input type="radio" id="blauw" name="categorie" value="blauw">
+        <label for="blauw">Blauw</label></p>
+        <p><input type="radio" id="anderstalig" name="categorie" value="anderstalig">
+        <label for="anderstalig">Anderstalig</label></p>
+        </div>
+        <button type="submit" method="POST" class="button"><b>Toevoegen</b></button>
+    </form>
+
+    <p id="error"></p>
+</body>
+
+{%endblock%}

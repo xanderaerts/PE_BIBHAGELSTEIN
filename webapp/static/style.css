@@ -1,0 +1,310 @@
+
+h1{
+    font-size: 32pt;
+    text-align: center;
+    color: black;
+    padding: 45px;
+}
+
+.afbeelding_home{
+    width: 30%;
+    padding: 10px;
+}
+
+h3{
+    font-weight: bold;
+    font-size: 20pt;
+
+}
+
+body{
+   background-image: url("../static/img/background-tile.png");
+   font-family: Arial;
+}
+
+table,th,td{
+    margin: 10px;
+    padding: 10px;
+    border:1px solid black;
+    border-collapse: collapse;
+    background-color: white;
+}
+th{
+    background-color: #6C9B3C;
+}
+
+
+/* Style header footer*/
+
+header{
+    color: #6C9B3C; /* nog niet de definitieve kleur */
+    margin-top: 1%;
+}
+
+header::after{
+    content: " ";
+    display: block;
+    clear: both;
+}
+
+footer{
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    background-color: #6C9B3C; /* nog niet de definitieve kleur */
+    text-align: left;
+    clear:both;
+    padding: 10px;
+    margin-bottom: 1%;
+    border-radius: 10px;
+    border:1px black solid;
+}
+
+/* Style vakjes homepage*/
+.logo-menu{
+    float: left;
+    width: 10%;
+    display: inline;
+}
+
+
+
+.vakjes_home{
+    border: 3px solid;
+    border-color: black;
+    background-color: white;
+    padding: 5px;
+    height: 250px;
+    width: 30%;
+    text-align: center;
+    margin: 1%;
+    display: inline;
+    border-radius: 10px;
+}
+
+.boekenlink{
+    clear: left;
+    float: left;
+    width: 30%;
+
+}
+
+.lenenlink{
+    float: left;
+    overflow: auto;
+}
+
+.beheerlink{
+    float: left;
+}
+
+a:link{
+    color: black;
+    text-decoration: none;
+}
+
+a:visited{
+    color: black;
+    text-decoration: none;
+}
+
+/*style menu*/
+
+nav{
+    background-color: #6C9B3C; /*nog niet de definitieve kleur*/
+    border: 3px solid black;
+    width: 100%;
+}
+
+nav ul{
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+}
+
+nav ul::after{
+    content: "";
+    display: block;
+    clear: both;
+}
+
+nav li{
+    float: left;
+    text-align: center;
+    width: 10%;
+    padding: 8px;
+    margin: 0px;
+    border: 3px solid black;
+    border-top: none;
+    border-bottom: none;
+    border-right: none;
+}
+
+nav li:hover{
+    background-color: white;
+    color: #6C9B3C;
+}
+
+#leeg:hover{
+    background-color: #6C9B3C;
+    color: #6C9B3C;
+}
+
+#afmelden{
+    float: right;
+}
+
+#leeg{
+    color: #6C9B3C;
+}
+
+.boek_toevoegen{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-content: center;
+    clear: both;
+    margin: 30px;
+    margin-top: 10px;
+    width: 500px;
+    text-align: center;
+    border: 3px solid black;
+    padding: 5px;
+}
+
+.border{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-content: center;
+    align-items: center;
+    clear: both;
+    margin-top: 30px;
+    margin-left: 30px;
+    width: 500px;
+    padding: 5px; 
+    border: 3px solid black;
+}
+
+.succes{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-content: center;
+    align-items: center;
+    clear: both;
+    margin-top: 30px;
+    margin-left: 30px;
+    width: 500px;
+    padding: 5px; 
+    color: Green;
+    font-weight: bold;
+    font-size: larger;
+}
+
+.error{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-content: center;
+    align-items: center;
+    clear: both;
+    margin-top: 30px;
+    margin-left: 30px;
+    width: 500px;
+    padding: 5px; 
+    color: red;
+    font-weight: bold;
+    font-size: larger;
+}
+
+.boek_toevoegen p{
+    text-align: center;
+    padding: 10px;
+}
+
+.boek_toevoegen_categorie{
+    display: flex;
+    align-items: center;
+}
+
+/* Start style login-page*/
+
+.logo-login-page{
+    margin-top:15%;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    width: 25%;
+    height: 25%;
+
+}
+
+.login-form{
+    display: block;
+    background-color: none;
+    margin-top: 1%;
+    margin-left: 33.33%;
+}
+
+.filter{
+    border: solid black;
+    background-color: white;
+    padding: 5px;
+    margin: 5px;
+}
+
+.filter p{
+    padding: 5px;
+}
+
+.zoeken{
+    float: left;
+}
+
+.zoekbalk{
+    float: left;
+}
+
+.zoekknop{
+    float: left;
+}
+
+.filter_flex{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-content: center;
+    align-items: center;
+    clear: both;
+    margin: 50px;
+    width: 500px;
+    border: 3px solid black;
+    padding: 5px;
+}
+
+.lenen_zoekbalk{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-content: center;
+    align-items: center;
+    clear: both;
+    margin: 50px;
+    width: 500px;
+    border: 3px solid black;
+    padding: 5px;
+}
+
+.inleveren_balk{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-content: center;
+    align-items: center;
+    clear: both;
+    margin: 50px;
+    width: 500px;
+    border: 3px solid black;
+    padding: 5px;
+}

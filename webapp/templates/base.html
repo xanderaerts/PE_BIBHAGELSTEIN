@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <link href="../static/reset.css" rel="stylesheet">
+        <link href="../static/style.css" rel="stylesheet"/>
+        <title>{%block title%} {%endblock%}</title>
+    </head>
+
+    <body>
+       
+        <header>
+            <img class="logo-menu" src="../static/img/logo_Hagel_1.png" alt="Kitos logo"/>
+            {%block header%} {%endblock%}
+        </header>
+       
+        <nav>
+            <ul>
+            <a href="/index">
+                <li>Home</li>
+            </a>
+            <a class="dropdown" href="/boeken">
+                <li>Boekenlijst</li>
+            </a>
+            </li>
+            <a href="/lenen">
+                <li>Ontlenen</li>
+            </a>
+            <a href="/inleveren">
+                <li>Inleveren</li>
+            </a>
+            <a href="/beheer">
+                <li>Beheer</li>
+            </a>
+            <a href="/boekenlijst">
+                <li>Volledige boekenlijst</li>
+            </a>
+            <a href="/uitgeleendlijst">
+                <li>Uitgeleende boeken</li>
+            </a>
+            <a  href="/logout">
+                <li id="afmelden">Afmelden</li>
+            </a>
+            </ul>
+        </nav>
+
+
+        {% block content%}
+        {% endblock%}
+        
+        <footer class="footer">
+            <p>
+                College Hagelstein <br>
+                Berlaarbaan 229<br>
+                2860 Sint-Katelijne-Waver<br>
+                telefoon: 015 55 19 79
+            </p>
+        </footer>
+    </body>
+</html>

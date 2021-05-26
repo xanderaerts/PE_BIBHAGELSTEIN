@@ -1,0 +1,90 @@
+{%extends "base.html"%}
+{%block title%}Lenen{%endblock%}
+
+{%block header%} 
+    <header>
+        <h1>Ontlenen</h1>
+    </header>
+{%endblock%}
+
+{%block content%}
+
+
+{%if succes%}
+    <div class="border">
+        <h3 class='succes'>{{succes}}</h3>
+        <button class="button"><a href="/lenen">Nieuw Boek</a></button>
+    </div>
+{%endif%}
+
+{%if error%}
+<div class="border">
+    <h2 class="error">{{error}}</h2>
+    <button class="button"><a href="/lenen">Terug</a></button>
+</div>
+{% endif %}
+
+
+
+    {%if disp_zoekbalk %}
+<div class="lenen_zoekbalk">
+    <form method="POST" action="/lenen">
+    <label for="boekid">Geef hier het ID van het boek dat u wenst uit te lenen: </label>
+    <input type="search" id="boekid" name="boekid">
+    <button type="submit" class="button" method="POST">Uitlenen</button>
+    </form>
+</div>
+    {%endif%}
+
+    {%if llnform%}
+    <div class="lenen_zoekbalk">
+    
+        {%if boek%}
+        <h2>Is dit het boek dat u wenst uit te lenen?</h2>
+        <table>
+        <tr>
+            <td>Titel</td>
+            <td>{{boek.titel}}</td>
+        </tr>
+        <tr>
+            <td>Auteur</td>
+            <td>{{boek.auteur}}</td>
+        </tr>
+        <tr>
+            <td>Afkorting Auteur</td>
+            <td>{{boek.afkorting_auteur}}</td>
+        </tr>
+        <tr>
+            <td>ISBN</td>
+            <td>{{boek.isbn}}</td>
+        </tr>
+        <tr>
+            <td>Nummer in bib</td>
+            <td>{{boek.nummer_jaartal_volgnummer}}</td>
+        </tr>
+        </table>
+
+        
+        
+        <h2>Fout boek? Klik hieronder om terug te gaan. </h2>
+        <button><a href="/lenen">Terug</a></button>
+        
+        {%endif%} 
+
+        <form class="leerling_toevoegen"  method="POST" action="/ontlenen">
+        <label for="Klas"><b>Klas</b></label>
+        <p><input type="text" id="Klas" name="Klas"></p>
+        <label for="KlasNr"><b>Klasnummer</b></label>
+        <p><input type="text" id="KlasNr" name="KlasNr"></p>
+        <label for="Voornaam"><b>Voornaam</b></label>
+        <p><input type="text" id="Voornaam" name="Voornaam"></p>
+        <label for="Naam"><b>Naam</b></label>
+        <p><input type="text" id="Naam" name="Naam"></p>
+        
+            <button type="submit" method="POST"><b>Toevoegen</b></button>
+        </form>
+    </div>
+    {%endif%}
+
+    
+{%endblock%}

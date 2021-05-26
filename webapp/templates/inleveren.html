@@ -1,0 +1,72 @@
+{%extends "base.html"%}
+{%block title%}Inleveren{%endblock%}
+
+{%block header%} 
+    <header>
+        <h1>Inleveren</h1>
+    </header>
+{%endblock%}
+    
+{%block content%}
+{%if error%}
+<div class="border">
+    <h3 class='error'>{{error}}</h3>
+    <button class="button"><a href="/inleveren">Terug</a></button>
+</div>
+{%endif%}
+{%if succes%}
+<div class="border">
+    <h2 class="suuces">{{succes}}</h2>
+    <button class="button"><a href="/inleveren">Terug</a></button>
+</div>
+{%endif%}
+
+    {%if disp_form%}
+    <div class="inleveren_balk">
+    <table>
+        <tr>
+            <td>Titel</td>
+            <td>{{boek.titel}}</td>
+        </tr>
+        <tr>
+            <td>Auteur</td>
+            <td>{{boek.auteur}}</td>
+        </tr>
+        <tr>
+            <td>Afkorting Auteur</td>
+            <td>{{boek.afkorting_auteur}}</td>
+        </tr>
+        <tr>
+            <td>ISBN</td>
+            <td>{{boek.isbn}}</td>
+        </tr>
+        <tr>
+            <td>Nummer in bib</td>
+            <td>{{boek.nummer_jaartal_volgnummer}}</td>
+        </tr>
+        </table>
+
+        <form method="POST" action="/inleveren_defnitief">
+        <h2>Is dit het juiste boek?</h2>
+        <p><input type="radio" id="ja" name="confirm" value="True">
+        <label for="ja">Ja</label></p>
+        <p><input type="radio" id="nee" name="confirm" value="False">
+        <label for="nee">Nee</label></p>
+        <button class="button type="submit">Check</button>
+        </form>
+    </div>
+
+    {%endif%}
+
+    {%if disp_zoekbalk%}
+    <div class="inleveren_balk">
+    <form method="POST" action="/inleveren">
+        <label for="boekid">Geef hier het ID van het boek dat u wenst in te leveren:  </label>
+        <input type="search" id="boekid" name="boekid">
+        <button type="submit" class="" method="POST">Inleveren</button>
+    </form>
+    </div>
+    {%endif%}
+
+
+{%endblock%}

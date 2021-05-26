@@ -1,0 +1,71 @@
+{%extends "base.html"%}
+{%block title%}Boeken{%endblock%}
+
+{%block header%} 
+    <header>
+        <h1>Uitgeleende boeken</h1>
+    </header>
+{%endblock%}
+
+{%block content%}
+
+{% if error %}
+<h2 class="error">{{error}}</h2>
+{% endif %}
+
+{%if gevonden_boeken%}
+<table style="float:left;margin-right: 0%;border-right: none;">
+    <tr>
+        <th>BoekID</th>
+        <th>Titel</th>
+        <th>Auteur</th>
+        <th>Afkorting Auteur</th>
+        <th>ISBN nummer</th>
+        <th>Nummer BIB</th>
+        <th>Categorie</th>
+        
+    
+    </tr>    
+{% for boek in gevonden_boeken %}
+    <tr>
+        <td>{{boek.BoekID}}</td>
+        <td>{{boek.titel}}</td>
+        <td>{{boek.auteur}}</td>
+        <td>{{boek.afkorting_auteur}}</td>
+        <td>{{boek.isbn}}</td>
+        <td>{{boek.nummer_jaartal_volgnummer}}</td>
+        <td>{{boek.categorie}}</td>
+</tr>
+{%endfor%}
+</table>
+<table style="margin-left:0px;margin-right:0%;float:left">
+    <tr>
+    <th>Voornaam + naam leerling</th>
+    <th>Klas + KlasNr</th>
+    </tr>
+    
+    {%for lln in gevonden_lln%}
+    <tr>
+        <td>{{lln.voornaam}} {{lln.naam}}</td>
+        <td>{{lln.klas_nr}} {{lln.klas}}</td>
+    </tr>
+    {%endfor%}
+</table>
+
+<table style="margin-left: 0%;">
+    <tr>
+        <th>Datum start leenperiode</th>
+    </tr>
+    {%for leen in leningen_boek%}
+    <tr>
+        <td>{{leen.datum}}</td>
+    </tr>
+    {%endfor%}
+</table>
+
+{%endif%}
+
+{%endblock%}
+
+    
+

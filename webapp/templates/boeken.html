@@ -1,0 +1,67 @@
+{%extends "base.html"%}
+{%block title%}Boeken{%endblock%}
+
+{%block header%} 
+    <header>
+        <h1>Boeken</h1>
+    </header>
+{%endblock%}
+
+{%block content%}
+
+{%if error%}
+<h2 class="error">{{error}}</h2>
+{%endif%}
+
+<div class="filter_flex">
+
+    <div class="zoeken">
+        <h4 >Wenst u een bepaald boek op te zoeken, dan kan u dat hier doen!</h4>
+    </div><br>
+   
+    <form method="POST" action="/boeken">
+        <div class="zoekbalk">
+          <input type="text" class="form-control" name="opzoeking" placeholder="Geef uw zoek opdracht in." required>
+      </div>
+        <div class="zoekknop">
+          <button type="submit" class="button"><b>Zoeken</b></button>
+        </div>
+    </form>
+</div>
+
+
+{% if disp_table%}
+<table>
+    <tr>
+        <th>BoekID</th>
+        <th>Titel</th>
+        <th>Auteur</th>
+        <th>Afkorting Auteur</th>
+        <th>ISBN nummer</th>
+        <th>Nummer BIB</th>
+        <th>Categorie</th>
+        <th>Status</th>
+    
+    </tr>
+    {% for boek in gevonden_boeken%}
+    <tr>
+        <td>{{boek.BoekID}}</td>
+        <td>{{boek.titel}}</td>
+        <td>{{boek.auteur}}</td>
+        <td>{{boek.afkorting_auteur}}</td>
+        <td>{{boek.isbn}}</td>
+        <td>{{boek.nummer_jaartal_volgnummer}}</td>
+        <td>{{boek.categorie}}</td>
+        {%if boek.LeenID == None %}
+        <td>In BIB</td>
+        {%else%}
+        <td>Uitgeleend</td>
+        {%endif%}
+    </tr>
+    {%endfor%}
+
+{% endif%}
+
+</table>
+
+{%endblock%}

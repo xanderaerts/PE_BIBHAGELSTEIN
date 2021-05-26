@@ -1,0 +1,6 @@
+Deze packages zijn nodig voor het runnen van het programma:
+
+-flask
+-flask-login
+-flask_sqlalchemy
+-pymysql

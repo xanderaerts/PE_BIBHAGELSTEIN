@@ -1,0 +1,43 @@
+{%extends "base.html"%}
+{%block title%}Boeken{%endblock%}
+
+{%block header%} 
+    <header>
+        <h1>Boekenlijst</h1>
+    </header>
+{%endblock%}
+
+{%block content%}
+<table>
+    <tr>
+        <th>BoekID</th>
+        <th>Titel</th>
+        <th>Auteur</th>
+        <th>Afkorting Auteur</th>
+        <th>ISBN nummer</th>
+        <th>Nummer BIB</th>
+        <th>Categorie</th>
+        <th>Status</th>
+    
+    </tr>
+    {% for boek in gevonden_boeken %}
+    <tr>
+        <td>{{boek.BoekID}}</td>
+        <td>{{boek.titel}}</td>
+        <td>{{boek.auteur}}</td>
+        <td>{{boek.afkorting_auteur}}</td>
+        <td>{{boek.isbn}}</td>
+        <td>{{boek.nummer_jaartal_volgnummer}}</td>
+        <td>{{boek.categorie}}</td>
+        {%if boek.LeenID == None%}
+        <td>In BIB</td>
+        {%else%}
+        <td>Uitgeleend</td>
+        {%endif%}
+    </tr>
+    {%endfor%}
+    
+
+</table>
+
+{%endblock%}

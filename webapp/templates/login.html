@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>login</title>
+        <meta charset="utf-8">
+        <link href="../static/reset.css" rel="stylesheet">
+        <link href="../static/style.css" rel="stylesheet">
+
+    </head>
+    <body>
+        <div class="full-login-page">
+            <img class="logo-login-page center" src="../static/img/logo_Hagel_2.png">
+            <form action='/login' method="POST" class="login-form center">
+                <label for="username">Gebruikersnaam</label>
+                <input type="text" id="username" name="username">
+                <label for="password">Wachtwoord</label>
+                <input type="password" id="password" name="password">
+                <input type="submit" id="submit_button" value="Aanmelden">
+                {%if error%}
+                <p class='error'><strong>{{error}}</strong></p>
+
+                {% endif %}
+            </form>
+        </div>
+    </body>
+</html>
