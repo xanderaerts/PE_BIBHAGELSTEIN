@@ -208,7 +208,6 @@ def inleveren_defnitief():
     return render_template('inleveren.html',disp_zoekbalk=disp_zoekbalk,error=error,disp_form=disp_form,succes=succes)
 
 
-
 #pagina zorgt er voor dat er nieuwe boeken kunnen worden toegevoegd aan de database
 @main.route('/beheer', methods = ["POST","GET"])
 @login_required
@@ -266,6 +265,4 @@ def uitgeleendlijst():
     print(gevonden_lln)
     if(gevonden_boeken == []):
         error = "Er zijn op dit moment geen boeken uitgeleend"
-    
-   
     return render_template('uitgeleendelijst.html',gevonden_lln=gevonden_lln,leningen_boek=leningen_boek,gevonden_boeken=gevonden_boeken,error=error)
